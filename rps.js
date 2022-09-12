@@ -14,7 +14,7 @@ function getComputerChoice(){
 }
 
 function getPlayerChoice(){
-    choice = prompt('Choose Wisely! Will it be the mighty ROCK, the nimble PAPER, or the efficient SCISSORS?');
+    let choice = prompt('Choose Wisely! Will it be the mighty ROCK, the nimble PAPER, or the efficient SCISSORS?');
     return choice;
     
 }
@@ -57,19 +57,23 @@ if (playerselection.toUpperCase() == 'SCISSORS'){
   
 }
 else {
-    return "Thats not a choice, try again."
+    return alert("Thats not a choice, try again.")
 }}
 
 
 function game(rounds = 5){
- 
+  let roundCount = rounds
   let Victor = "";
   let lossCount = 0;
   let winCount = 0;
-  While (lossCount < rounds/2 || winCount < rounds/2); {
-    const computerselection = getComputerChoice();
-    const playerselection = getPlayerChoice();
-    Outcome = playRound();
+  console.log("hey this is right here")
+  while (lossCount < roundCount/2 || winCount < roundCount/2) {
+    console.log("the ")
+    console.log("Hey this is right here")
+    let computerselection = getComputerChoice();
+    let playerselection = getPlayerChoice();
+    Outcome = playRound(playerselection, computerselection);
+    alert(Outcome);
 
     if (Outcome == "Victory!"){
       winCount +=1; 
@@ -78,8 +82,9 @@ function game(rounds = 5){
       lossCount +=1;
     }
     else {
-      rounds += 1;
+      roundCount++;
     }
+    roundCount--;
  
   
 } 
@@ -87,10 +92,22 @@ function game(rounds = 5){
     Victor = console.log("Felled by the might of the machines. A relatable destiny");
    }   
   else {
-    Victor = Console.log("Congrats Player you are the big winner!");
+    Victor = console.log("Congrats Player you are the big winner!");
   }
   return Victor  
 }
-alert("Its time for a motherfucking shooooooooowdown")
-console.log("yo yo yo yo yo ")
-game()
+
+function winner(result) {
+  let message = "";
+  if (result == console.log("Congrats Player you are the big winner!")){
+    message = "You win the Match!!!"}
+  else {
+    message = "You have lost your last hand, all goes black."
+  }
+  return console.log(message);
+}
+
+
+let matchOutcome = game();
+
+
